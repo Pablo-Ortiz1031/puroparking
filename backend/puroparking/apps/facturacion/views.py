@@ -12,7 +12,7 @@ from .serializers import *
 class facturacionViewset(viewsets.ModelViewSet):
 
     queryset = facturacion.objects.all()
-    serializer_class = FacturacionSerializer
+    serializer_class = facturacionacturacionSerializer
 
     filter_backends = [
         DjangoFilterBackend,

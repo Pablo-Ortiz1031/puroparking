@@ -1,0 +1,33 @@
+<html>
+    <head>
+    <title>Registro de roles</title>
+    <script src="js/jquery.js"></script>
+   </head>
+    <body>
+
+
+
+    <input type="text" id="nombre" placeholder="Introduzca nombre" />
+    <button id="Registrar">Registrar</button>
+
+    </body>
+</html>
+
+<script>
+    $(document).ready(function(){
+
+        $("#registrar").click(function(){
+
+
+            $.ajax({
+                type: "POST",
+                data: datos
+                url: ""
+                success: function (valor){
+
+                }
+
+            });
+        })
+    })
+</script>
