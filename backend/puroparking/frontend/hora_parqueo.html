@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login via API - Hora de parqueo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        label, input {
+            display: block;
+            margin: .5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Hora de parqueo</h1>
+
+        <form id="loginForm">
+            <label for="precio">Precio:</label>
+            <input type="text" id="precio" required>
+
+            <label for="servicio">Servicio:</label>
+            <input type="text" id="servicio" required>
+
+            <button type="submit">Ingresar</button>
+        </form>
+        <div id="msg"></div>
+    </center>
+
+    <script>
+    $(document).ready(function(){
+        $('#loginForm').on('submit', function(e){
+            e.preventDefault();
+            $('#msg').text('');
+
+            const precio = $('#precio').val();
+            const servicio = $('#servicio').val();
+
+            $.ajax({
+                url: 'http://127.0.0.1:8000',
+                method: 'POST',
+                data: {
+                    precio: precio,
+                    servicio: servicio
+                },
+                dataType: 'json',
+                success: function(response){
+                    if(response.success){
+                        $('#msg').css('color', 'green').text('Acceso correcto');
+                    } else {
+                        $('#msg').css('color', 'red').text('Acceso denegado');
+                    }
+                },
+                error: function(){
+                    $('#msg').css('color', 'red').text('Error en la petición al servidor');
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>

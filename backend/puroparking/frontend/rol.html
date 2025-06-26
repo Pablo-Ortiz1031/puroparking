@@ -1,33 +1,23 @@
-<html>
+<!DOCTYPE html>
+
+<html lang="es">
     <head>
-    <title>Registro de roles</title>
-    <script src="js/jquery.js"></script>
-   </head>
-    <body>
+        <meta charset="UTF-8">
+        <title>Login via api Rol</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+<body>
 
-
-
-    <input type="text" id="nombre" placeholder="Introduzca nombre" />
-    <button id="Registrar">Registrar</button>
-
-    </body>
+    <center>
+        <h1>Registro de Roles</h1>
+        <form id="loginForm">
+            <label>Nombre:</label>
+            <p>
+                <input type="text" id="username" required>
+            <p>
+                <button type="submit">Ingresar</button>
+            </p>
+            </form>
+            <div id="msg"></div>
+    </center>
 </html>
-
-<script>
-    $(document).ready(function(){
-
-        $("#registrar").click(function(){
-
-
-            $.ajax({
-                type: "POST",
-                data: datos
-                url: ""
-                success: function (valor){
-
-                }
-
-            });
-        })
-    })
-</script>

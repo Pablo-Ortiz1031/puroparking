@@ -8,16 +8,3 @@ class vehiculo (models.Model):
     Servicio_id = models.IntegerField("Servicio")
 
 
-    def__str__(self):
-
-    def __str__(self):
-        return f'{self.Placa}'
-    
-    def __str__(self):
-        return f'{self.matricula_vehiculo}'
-    def __str__(self):
-        return f'{self.usuario_id}'
-    def __str__(self):
-        return f'{self.fecha_ingreso}'
-    def __str__(self):
-        return f'{self.Servicio_id}'
