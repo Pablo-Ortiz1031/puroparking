@@ -28,12 +28,18 @@
 
     <script>
     $(document).ready(function(){
-        $('#ingresar').click('submit', function(e){
-            e.preventDefault();
-            $('#msg').text('');
+        $('#ingresar').click('submit', function(){
+            var precio = $('#precio').val();
+            var servicio = $('#servicio').val();
 
-            const precio = $('#precio').val();
-            const servicio = $('#servicio').val();
+            $("#resultado").html("<p>precio: " + precio + " y servicio: " + service + "</p>");
+
+                if (precio === "10.000" && service === "automovil") {
+                    alert("Has apartado tu lugar");
+                     window.location.href = 'facturacion.html';
+                } else {
+                    alert("Digite el servicio que necesita");
+                }
 
             $.ajax({
                 url: 'http://127.0.0.1:8000/',
