@@ -97,19 +97,16 @@
       espacio.addEventListener('click', () => {
         if (espacio.classList.contains('ocupado')) return;
 
-        // Deselecciona los otros
         document.querySelectorAll('.espacio.seleccionado').forEach(e => {
           e.classList.remove('seleccionado');
         });
 
-        // Selecciona este
         espacio.classList.toggle('seleccionado');
       });
 
       parqueadero.appendChild(espacio);
     }
 
-    // Simula espacios ocupados
     const ocupados = [3, 6, 9, 13, 17];
     ocupados.forEach(num => {
       const espacio = parqueadero.children[num - 1];
@@ -126,6 +123,5 @@
 </p>
 
 </body>
-
 
 </html>
